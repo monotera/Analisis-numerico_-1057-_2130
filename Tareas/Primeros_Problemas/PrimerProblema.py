@@ -14,14 +14,14 @@ def sqrt(n, E, x):
         raise ValueError("El valor de n y/o x no puede ser negativo")
     elif n == 0:
         return 0
-    y = np.longdouble(1/2*(x + (n/x)))
+    y = np.clongdouble(1/2*(x + (n/x)))
     while abs(x-y) > E:
         x = y
-        y = np.longdouble(1/2*(x + (n/x)))
-        print(round(y, int(str(E).split('-')[1])))
-    return round(y, int(str(E).split('-')[1]))
+        y = np.clongdouble(1/2*(x + (n/x)))
+        print ("%.64f" %y)
+    return y
 
 
-print("Raiz cuadrarda de 7 con una tolerancia de 10^-8 ", sqrt(7, 10**-8, 1))
+print("Raiz cuadrarda de 7 con una tolerancia de 10^-8 ", sqrt(7, 10**-124, 1))
 print("Raiz cuadrarda de 7 con una tolerancia de 10^-16 ", sqrt(7, 10**-16, 1))
 print("Raiz cuadrarda de 7 utilizando funcion de python sqrt ",  math.sqrt(7))

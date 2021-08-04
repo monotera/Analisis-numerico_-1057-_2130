@@ -26,4 +26,4 @@ print("Resultado:"+str(resultado))
 
 #Se llega a la conclucion de que el numero de operaciones es igual al grado 
 print("Numero de multiplicaciones:"+str(cont))
-print("Numero de diviciones:"+str(cont))
+print("Numero de Suma:"+str(cont))
