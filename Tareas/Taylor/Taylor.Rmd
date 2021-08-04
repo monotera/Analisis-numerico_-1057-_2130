@@ -1,0 +1,39 @@
+---
+title: "Aproximacion de f(x) = 1/1-x utilizando Taylor"
+output: html_notebook
+---
+
+
+```{r}
+rm(list=ls())
+#install.packages("pracma")
+library(pracma)
+```
+
+```{r}
+options(digits = 15)
+f1<- function(x) {1/(1-x)} 
+ 
+taylor_f1 <- taylor(f1,0,5)
+```
+
+```{r}
+x1 <- seq(-1.0, 1.0, length.out = 50)
+x1
+```
+
+```{r}
+y1 <- f1(x1)
+y1
+```
+```{r}
+yr_taylor <- polyval(taylor_f1, x1)
+yr_taylor
+```
+```{r}
+plot(x1, y1, type = "l", main ="1/(1-x) Taylor", col = "blue", lwd= 1)
+par(new = TRUE)
+plot(x1, yr_taylor, type = "l", main="1/(1-x) Taylor", col = "red", lwd = 2)
+
+```
+
